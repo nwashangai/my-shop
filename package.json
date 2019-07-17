@@ -1,28 +1,79 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "node-sass": "^4.12.0",
-    "react": "^16.8.1",
-    "react-bootstrap": "^1.0.0-beta.9",
-    "react-dom": "^16.8.1",
-    "react-scripts": "2.1.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+	"name": "my-app",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"coveralls": "^3.0.5",
+		"node-sass": "^4.12.0",
+		"prop-types": "^15.7.2",
+		"react": "^16.8.1",
+		"react-bootstrap": "^1.0.0-beta.9",
+		"react-dom": "^16.8.1",
+		"react-router-dom": "^5.0.1",
+		"react-scripts": "2.1.3",
+		"sass-rem": "^2.0.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+		"lint:scss": "./node_modules/.bin/stylelint src  --fix",
+		"lint": "eslint src",
+		"watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+		"test": "react-scripts test --coverage --updateSnapshot --runInBand",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"@commitlint/cli": "^8.1.0",
+		"@commitlint/config-conventional": "^8.1.0",
+		"babel-eslint": "9.0.0",
+		"babel-loader": "^8.0.4",
+		"cross-env": "^5.2.0",
+		"eslint": "^5.16.0",
+		"eslint-config-airbnb": "^17.1.1",
+		"eslint-config-prettier": "^6.0.0",
+		"eslint-import-resolver-webpack": "^0.11.1",
+		"eslint-loader": "^2.1.2",
+		"eslint-plugin-babel": "^5.3.0",
+		"eslint-plugin-import": "^2.17.3",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.0",
+		"eslint-plugin-react": "^7.14.2",
+		"husky": "^3.0.0",
+		"lint-staged": "^9.2.0",
+		"prettier": "^1.18.2",
+		"stylelint": "^10.1.0",
+		"stylelint-config-sass-guidelines": "^6.0.0",
+		"stylelint-config-standard": "^18.3.0",
+		"stylelint-no-px": "^0.12.1",
+		"stylelint-order": "^3.0.0",
+		"stylelint-scss": "^3.8.0"
+	},
+	"lint-staged": {
+		"*.scss": [
+			"yarn lint:scss --quiet",
+			"git add"
+		],
+		"*.{js,jsx}": [
+			"yarn lint",
+			"git add"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged && yarn test",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-push": "lint-staged"
+		}
+	}
 }

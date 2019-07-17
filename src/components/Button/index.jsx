@@ -4,57 +4,42 @@ import * as React from 'react';
 // third-party libraries
 import { Button, Spinner } from 'react-bootstrap';
 
-// styles
-import './Button.scss';
+// interface
+import { propTypes } from './interface.d';
 
-const Btn = (props) => {
-  let {
-    variant,
-    name,
-    disabled,
-    classes,
-    size,
-    alignImageRight = true,
-  } = props;
+// styles
+// import './Button.scss';
+
+const Btn = props => {
+  const { variant, name, disabled, classes, size, alignImageRight = true, ...rest } = props;
 
   const renderButtonContents = () => {
-    if (props.isLoading) {
+    if (rest.isLoading) {
       return (
         <React.Fragment>
-          <Spinner
-            as="span"
-            animation="border"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          /> 
+          <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
           Loading...
         </React.Fragment>
       );
     }
 
-    return alignImageRight
-      ? (
-          <React.Fragment>
-            {name} {props.icon && <img src={props.icon} alt="icon" />}
-          </React.Fragment>
-        )
-      : (
-          <React.Fragment>
-            {props.icon && <img src={props.icon} alt="icon" />} {name}
-          </React.Fragment>
-        );
+    return alignImageRight ? (
+      <React.Fragment>
+        {name} {rest.icon && <img src={rest.icon} alt="icon" />}
+      </React.Fragment>
+    ) : (
+      <React.Fragment>
+        {rest.icon && <img src={rest.icon} alt="icon" />} {name}
+      </React.Fragment>
+    );
   };
 
   return (
-    <Button
-      variant={variant}
-      size={size}
-      disabled={disabled}
-      classes={`default ${classes}`}>
+    <Button variant={variant} size={size} disabled={disabled} className={`default ${classes}`}>
       {renderButtonContents()}
     </Button>
   );
 };
 
+Btn.propTypes = propTypes;
 export default Btn;
