@@ -4,5 +4,7 @@
 	"tabWidth": 2,
 	"eslintIntegration": true,
 	"destructuring-assignment": false,
-	"prettier.stylelintIntegration": true
+	"prettier.stylelintIntegration": true,
+	"selector-no-vendor-prefix": false,
+	"indentation": 2
 }

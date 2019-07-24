@@ -3,11 +3,25 @@ import React, { Component } from 'react';
 import './App.scss';
 
 // components
+import Navbar from 'components/NavBar';
 import Routes from './routes';
 
 class App extends Component {
+  state = {
+    itemCount: 0,
+  };
+
+  showCart = () => {
+    // open user cart here
+  };
+
   render() {
-    return <Routes />;
+    return (
+      <>
+        <Navbar name="John" badge={this.state.itemCount} handleCart={this.showCart} />
+        <Routes />;
+      </>
+    );
   }
 }
 
