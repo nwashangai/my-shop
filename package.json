@@ -3,8 +3,13 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.19",
+		"@fortawesome/free-solid-svg-icons": "^5.9.0",
+		"@fortawesome/react-fontawesome": "^0.1.4",
 		"bootstrap": "^4.3.1",
 		"coveralls": "^3.0.5",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0",
 		"node-sass": "^4.12.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.8.1",
@@ -19,7 +24,7 @@
 		"build": "react-scripts build",
 		"build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
 		"lint:scss": "./node_modules/.bin/stylelint src  --fix",
-		"lint": "eslint src",
+		"lint": "eslint --fix src",
 		"watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
 		"test": "react-scripts test --coverage --updateSnapshot --runInBand",
 		"eject": "react-scripts eject"
@@ -50,7 +55,7 @@
 		"eslint-plugin-prettier": "^3.1.0",
 		"eslint-plugin-react": "^7.14.2",
 		"husky": "^3.0.0",
-		"lint-staged": "^9.2.0",
+		"lint-staged": ">=8",
 		"prettier": "^1.18.2",
 		"stylelint": "^10.1.0",
 		"stylelint-config-sass-guidelines": "^6.0.0",
@@ -61,7 +66,7 @@
 	},
 	"lint-staged": {
 		"*.scss": [
-			"yarn lint:scss --quiet",
+			"yarn lint:scss",
 			"git add"
 		],
 		"*.{js,jsx}": [
