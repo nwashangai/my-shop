@@ -1,0 +1,24 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.radio-button {
+	display: inline-grid;
+	margin: rem(5px);
+
+	.button-option {
+		display: inline-grid;
+		padding: rem(1px) rem(3px) rem(4px) rem(3px);
+		border-radius: 50%;
+	}
+
+	&__input {
+		opacity: 0;
+	}
+
+	&__selected {
+		margin: rem(1px);
+		padding: rem(3px);
+		border: rem(1px) solid rgb(196, 192, 192);
+		border-radius: 50%;
+	}
+}

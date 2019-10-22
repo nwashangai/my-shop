@@ -2,152 +2,151 @@
 @import '../../assets/variables';
 
 .nav-bar {
-  display: flex;
-  justify-content: space-between;
-  font-size: rem(17px);
-  font-weight: bolder;
+	display: flex;
+	justify-content: space-between;
+	font-size: rem(17px);
+	font-weight: bolder;
 
-  .dropdown-basic {
-    display: flex;
-    padding: 0;
-    outline: none;
-  }
+	.dropdown-basic {
+		display: flex;
+		padding: 0;
+		outline: none;
+	}
 
-  .dropdown-basic:focus {
-    outline: none;
-  }
+	.dropdown-basic:focus {
+		outline: none;
+	}
 
-  .dropdown-toggle::after {
-    margin-top: rem(10px);
-    color: map-get($palette, primary);
-  }
+	.dropdown-toggle::after {
+		margin-top: rem(10px);
+		color: map-get($palette, primary);
+	}
 
-  &__pad {
-    display: flex;
-    padding: rem(10px) 0 rem(10px) 0;
-  }
+	&__pad {
+		display: flex;
+		padding: rem(10px) 0 rem(10px) 0;
+	}
 
-  &__danger {
-    color: map-get($palette, primary);
-  }
+	&__danger {
+		color: map-get($palette, primary);
+	}
 
-  &__child {
-    display: flex;
-    justify-content: space-between;
-    padding-right: rem(15px);
-    padding-left: rem(15px);
-  }
+	&__child {
+		display: flex;
+		justify-content: space-between;
+		padding-right: rem(15px);
+		padding-left: rem(15px);
+	}
 
-  &__user {
-    width: 30%;
-    padding-left: 5%;
-  }
+	&__user {
+		width: 30%;
+		padding-left: 5%;
+	}
 
-  &__info-container {
-    width: 27%;
-    margin-right: 6%;
-    margin-left: 6%;
-  }
+	&__info-container {
+		width: 27%;
+		margin-right: 6%;
+		margin-left: 6%;
+	}
 
-  &__bills {
-    width: 43%;
-    margin-left: rem(20px);
-    padding-right: 3%;
-  }
+	&__bills {
+		width: 43%;
+		margin-left: rem(20px);
+		padding-right: 3%;
+	}
 
-  &__flag {
-    margin-right: rem(10px);
-  }
+	&__flag {
+		margin-right: rem(10px);
+	}
 
-  &__cart {
-    width: rem(35px);
-    height: rem(32px);
-  }
+	&__cart {
+		width: rem(35px);
+		height: rem(32px);
+	}
 
-  &__flex {
-    display: flex;
-  }
+	&__flex {
+		display: flex;
+	}
 
-  &__badge-container {
-    position: relative;
-    margin-right: rem(8px);
+	&__badge-container {
+		position: relative;
+		margin-right: rem(8px);
 
-    &__badge {
-      position: absolute;
-      top: rem(-5px);
-      right: rem(-3px);
-      border-radius: 50%;
-    }
-  }
+		&__badge {
+			position: absolute;
+			top: rem(-5px);
+			right: rem(-3px);
+			border-radius: 50%;
+		}
+	}
 }
 
 .nav-bar-scondary {
-  display: flex;
-  background: map-get($palette, dark);
-  padding: rem(20px) 5% rem(20px) 5%;
-  font-size: rem(18px);
-  font-weight: bold;
-  color: map-get($palette, pure);
+	display: flex;
+	background: map-get($palette, dark);
+	padding: rem(20px) 5% rem(20px) 5%;
+	font-size: rem(18px);
+	font-weight: bold;
+	color: map-get($palette, pure);
 
-  &__logo {
-    // padding-top: rem(0.6%);
-    display: flex;
-    width: 30%;
-    font-size: rem(30px);
-    color: map-get($palette, primary);
-  }
+	&__logo {
+		display: flex;
+		width: 30%;
+		font-size: rem(30px);
+		color: map-get($palette, primary);
+	}
 
-  &__department-container {
-    display: flex;
-    justify-content: space-between;
-    width: 35%;
-    padding: rem(0.6%) 2% 0 2%;
-  }
+	&__department-container {
+		display: flex;
+		justify-content: space-between;
+		width: 35%;
+		padding: rem(0.6%) 2% 0 2%;
+	}
 
-  &__search {
-    width: 35%;
-    padding-left: 2%;
-  }
+	&__search {
+		width: 35%;
+		padding-left: 2%;
+	}
 
-  &__search-content {
-    display: flex;
-    background: map-get($palette, secondary);
-    border-radius: rem(23px);
+	&__search-content {
+		display: flex;
+		background: map-get($palette, secondary);
+		border-radius: rem(23px);
 
-    input {
-      background: map-get($palette, secondary);
-      border-style: none;
-    }
+		input {
+			background: map-get($palette, secondary);
+			border-style: none;
+		}
 
-    /* stylelint-disable selector-no-vendor-prefix */
-    ::-webkit-input-placeholder,
-    input {
-      font-size: rem(18px);
-      font-weight: bold;
-      /* Chrome/Opera/Safari */
-      color: map-get($palette, pure);
-    }
+		/* stylelint-disable selector-no-vendor-prefix */
+		::-webkit-input-placeholder,
+		input {
+			font-size: rem(18px);
+			font-weight: bold;
+			/* Chrome/Opera/Safari */
+			color: map-get($palette, pure);
+		}
 
-    ::-moz-placeholder,
-    input {
-      font-size: rem(18px);
-      font-weight: bold;
-      /* Firefox 19+ */
-      color: map-get($palette, pure);
-    }
+		::-moz-placeholder,
+		input {
+			font-size: rem(18px);
+			font-weight: bold;
+			/* Firefox 19+ */
+			color: map-get($palette, pure);
+		}
 
-    input:focus {
-      background: map-get($palette, secondary);
-      color: map-get($palette, pure);
-      outline: none !important;
-    }
+		input:focus {
+			background: map-get($palette, secondary);
+			color: map-get($palette, pure);
+			outline: none !important;
+		}
 
-    &__input {
-      padding: rem(10px) 0 rem(10px) rem(15px);
-    }
+		&__input {
+			padding: rem(10px) 0 rem(10px) rem(15px);
+		}
 
-    &__close {
-      padding: rem(10px) rem(20px) rem(10px) 0;
-    }
-  }
+		&__close {
+			padding: rem(10px) rem(20px) rem(10px) 0;
+		}
+	}
 }

@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-// import logo from '../logo.svg';
+
 import './Home.scss';
 
 // components
+import SideBar from '../../components/SideBar';
+import Card from '../../components/Card';
 
-class App extends Component {
+class Home extends Component {
+  state = {
+    filters: {
+      selectedColor: '',
+      selectedButton: '',
+    },
+  };
+
+  filterOption = event => {
+    const { value, id } = event.target;
+    this.setState(prev => ({ ...prev, filters: { ...prev.filters, [id]: value } }));
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </a>
-        </header>
+      <div className="home-page">
+        <Card classes="home-page__side-bar">
+          <SideBar selectedOptions={this.state.filters} selectOption={this.filterOption} />
+        </Card>
+        <Card classes="home-page__main-content">None</Card>
       </div>
     );
   }
 }
 
-export default App;
+export default Home;

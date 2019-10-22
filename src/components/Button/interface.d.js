@@ -6,7 +6,10 @@ export const propTypes = {
   name: PropTypes.string,
   disabled: PropTypes.bool,
   classes: PropTypes.string,
+  onClick: PropTypes.func,
   size: PropTypes.string,
+  value: PropTypes.any,
+  id: PropTypes.string,
   alignImageRight: PropTypes.bool,
 };
 

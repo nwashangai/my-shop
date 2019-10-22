@@ -1,0 +1,70 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.side-bar {
+	position: relative;
+	height: inherit;
+	border: 0.08rem map-get($palette, card-border) solid;
+
+	&__title {
+		width: 100%;
+		height: rem(30px);
+		padding-left: rem(15px);
+		border-bottom: 0.08rem map-get($palette, card-border) solid;
+		font-size: rem(18PX);
+		font-weight: bold;
+		color: rgb(110, 108, 108);
+	}
+
+	&__categories {
+		padding: rem(3px) rem(3px) rem(10px) rem(20px);
+	}
+
+	&__category {
+		padding: rem(3px) 0 rem(3px) rem(5px);
+	}
+
+	&__colors-header {
+		padding: rem(30px) 0 rem(1px) rem(20px);
+		font-size: rem(18PX);
+		font-weight: bold;
+		color: map-get($text-colors, label);
+	}
+
+	&__colors,
+	&__sizes {
+		padding: 0 rem(20px) rem(1px) rem(20px);
+	}
+
+	&__clear-container {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		border-top: 0.08rem map-get($palette, card-border) solid;
+	}
+
+	&__apply-filter {
+		margin: rem(10px) rem(5px) rem(20px) rem(10px);
+	}
+
+	&__clear-filter {
+		background: map-get($palette, transparent);
+		margin: rem(10px) rem(5px) rem(20px) rem(10px);
+		border: rem(1px) solid map-get($palette, transparent);
+		font-weight: lighter;
+		color: map-get($palette, primary);
+	}
+
+	&__apply-filter:hover,
+	&__clear-filter:hover {
+		background: rgb(235, 235, 235);
+		border: rem(1px) solid rgb(235, 235, 235);
+		color: map-get($palette, primary);
+	}
+
+	// .button-red {
+	// 	.button-option {
+	// 		background: red;
+	// 	}
+	// }
+}

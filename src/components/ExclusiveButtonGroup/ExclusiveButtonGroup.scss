@@ -1,0 +1,26 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.exclusive-button {
+	display: inherit;
+	margin: rem(5px);
+
+	&__size {
+		background-color: rgb(235, 235, 235); //map-get($palette, placeholder);
+		width: rem(60px);
+		height: rem(29px);
+		margin: rem(3px);
+		padding: rem(2px);
+		border-radius: rem(2px);
+		font-size: rem(13px);
+		color: map-get($text-colors, label);
+		border-color: map-get($palette, pure);
+	}
+
+	&__size:hover,
+	&__selected {
+		background-color: map-get($palette, primary);
+		color: map-get($palette, pure);
+		border-color: map-get($palette, primary);
+	}
+}

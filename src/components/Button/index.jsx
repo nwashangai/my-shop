@@ -11,7 +11,7 @@ import { propTypes } from './interface.d';
 // import './Button.scss';
 
 const Btn = props => {
-  const { variant, name, disabled, classes, size, alignImageRight = true, ...rest } = props;
+  const { variant, name, disabled, classes, onClick, size, alignImageRight = true, ...rest } = props;
 
   const renderButtonContents = () => {
     if (rest.isLoading) {
@@ -35,7 +35,15 @@ const Btn = props => {
   };
 
   return (
-    <Button variant={variant} size={size} disabled={disabled} className={`default ${classes}`}>
+    <Button
+      variant={variant}
+      size={size}
+      value={rest.value}
+      id={rest.id}
+      onClick={onClick}
+      disabled={disabled}
+      className={`default ${classes}`}
+    >
       {renderButtonContents()}
     </Button>
   );
