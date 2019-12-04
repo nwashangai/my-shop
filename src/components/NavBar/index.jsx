@@ -2,13 +2,9 @@
 import * as React from 'react';
 
 // third party libraries
-// import PropTypes from 'prop-types';
 import { Badge, Form, Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes, faSignOutAlt, faUser, faBriefcase } from '@fortawesome/free-solid-svg-icons';
-
-// third-party libraries
-// import { Link } from 'react-router-dom';
 
 // interface
 import { props } from './interface.d';

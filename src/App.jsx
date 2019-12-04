@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <>
         <Navbar name="John" badge={this.state.itemCount} handleCart={this.showCart} />
-        <Routes />;
+        <Routes />
       </>
     );
   }

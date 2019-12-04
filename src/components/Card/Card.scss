@@ -1,0 +1,9 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.card-main {
+	background-color: map-get($palette, pure);
+	min-width: 10rem;
+	min-height: 10rem;
+	// border: 0.08rem map-get($palette, card-border) solid;
+}
